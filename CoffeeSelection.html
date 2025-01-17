@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique - Coffee Selection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jquery.zoom.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo1.jpg" alt="">
+        </div>
+        <div class="links">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="CoffeeSelection.html">Coffee Selection</a>
+                <a href="BrewingEquips.html">Brewing Equipment</a>
+                <a href="EventsWorkshops.html">Events</a>
+                <a href="SpecialOffers.html">Special Offers</a>
+                <a href="Cart.html"><i class="bi bi-basket"></i></a>
+                <a href="#"><i class="bi bi-person-square"></i></a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="search-container" class="text-center my-4">
+            <h1>Our Exclusive Coffee Blends</h1>
+            <input type="text" id="searchbar" class="form-control mx-auto mt-3" style="max-width: 400px;" placeholder="Search coffee blends...">
+        </div>
+            <div class="basket-noti">
+                <button type="button" onclick="location.href='Cart.html'" class="btn btn-primary position-relative">
+                    <i class="bi bi-basket"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    <span id="inputnum">0</span>
+                    <span class="visually-hidden"></span>
+                    </span>
+                </button>
+            </div>
+        <div id="coffee-list">
+            <div class="coffee-item">
+                <div class="zoom" tabindex="0">
+                    <img src="images/Arabica.jpg" alt="Arabica Coffee"> 
+                </div>
+                <h2>Myanmar Arabica Bean</h2>
+                <p>Bright and citrusy with floral textures, perfect for smooth morning brew.</p>
+                <p><span>Best Brewing Method:</span> French press or pour-over.</p>
+                <p class="coffee-price"><span>Price:</span> £15/150g</p>
+                <button onclick="addtobasket(this);"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="coffee-item">
+                <div class="zoom">
+                    <img src="images/Robusta.jpg" alt="Robusta Coffee">
+                </div>
+                <h2>Robusta Bean</h2>
+                <p>Rich and chocolatey with a hint of nutty texture, ideal for a strong espresso.</p>
+                <p><span>Best Brewing Method:</span> Espresso or drip coffee.</p>
+                <p class="coffee-price"><span>Price:</span> £12/150g</p>
+                <button onclick="addtobasket(this);"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="coffee-item">
+                <div class="zoom">
+                    <img src="images/liberica.jpg" alt="Liberica Coffee">
+                </div>
+                <h2>Java Liberica Bean</h2>
+                <p>Smoky and bold with earthy aroma, a unique experience for coffee lovers.</p>
+                <p><span>Best Brewing Method:</span> Cold brew or moka pot.</p>
+                <p class="coffee-price"><span>Price:</span> £10/150g</p>
+                <button onclick="addtobasket(this);"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="coffee-item">
+                <div class="zoom">
+                    <img src="images/excelsa.jpg" alt="India Excelsa Coffee">
+                </div>
+                <h2>India Excelsa Bean</h2>
+                <p>Unique and vibrant with tart fruity notes and a light, spicy finish, perfect for adventurous palates.</p>
+                <p><span>Best Brewing Method:</span> French press or Pour-over</p>
+                <p class="coffee-price"><span>Price:</span> £7/150g</p>
+                <button onclick="addtobasket(this);"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="coffee-item">
+                <div class="zoom">
+                    <img src="images/CRB.jpg" alt="Costa Rica Coffee">
+                </div>
+                <h2>Costa Rica Bean</h2>
+                <p>Bright and vibrant, with a rich chocolaty finish. Ideal for enjoy a balance & complex cup.</p>
+                <p><span>Best Brewing Method:</span> Pour-over or French Press.</p>
+                <p class="coffee-price"><span>Price:</span> £18/150g</p>
+                <button onclick="addtobasket(this);"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="coffee-item">
+                <div class="zoom">
+                    <img src="images/Brazil-Decaf.jpg" alt="Brazil Decaf Coffee">
+                </div>
+                <h2>Brazil Decaf Bean</h2>
+                <p>Smooth and nutty with a hint of chocolate, perfect for a mellow, caffeine-free experience.</p>
+                <p><span>Best Brewing Method:</span> Espresso or French Press.</p>
+                <p class="coffee-price"><span>Price:</span> £25/150g</p>
+                <button onclick="addtobasket(this);"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="coffee-item">
+                <div class="zoom">
+                    <img src="images/Indonesia-bean.jpg" alt="Indonesia Coffee">
+                </div>
+                <h2>Indonesia Coffee Bean</h2>
+                <p>Earthy and rich with bold, smoky undertones, ideal for those who love intense flavors.</p>
+                <p><span>Best Brewing Method:</span> French Press or Cold Brew.</p>
+                <p class="coffee-price"><span>Price:</span> £12/150g</p>
+                <button onclick="addtobasket(this);"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="coffee-item">
+                <div class="zoom">
+                    <img src="images/Brazil-Espresso.jpg" alt="Brazil Espresso Coffee">
+                </div>
+                <h2>Brazil Espresso Bean</h2>
+                <p>Creamy and full-bodied with notes of caramel and nuts, crafted for a perfect espresso shot.</p>
+                <p><span>Best Brewing Method:</span> Espresso Machine or Moka Pot.</p>
+                <p class="coffee-price"><span>Price:</span> £14/150g</p>
+                <button onclick="addtobasket(this);"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="coffee-item">
+                <div class="zoom">
+                    <img src="images/Organic-blend.jpg" alt="Organic House Blend Coffee">
+                </div>
+                <h2>Organic House Blend Bean</h2>
+                <p>Well-balanced with hints of chocolate and a subtle fruity finish, perfect for any time of day.</p>
+                <p><span>Best Brewing Method:</span> Drip Coffee Maker or French Press.</p>
+                <p class="coffee-price"><span>Price:</span> £18/150g</p>
+                <button onclick="addtobasket(this);"><i class="bi bi-basket"></i></button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bean Boutique. All rights reserved.</p>
+        <h4>Contact Us</h4>
+        <p>Email: shop@beanboutique.co.uk</p>
+        <p><i class="bi bi-telephone"></i> +44 75 7550 2992</p>
+        <div class="icons">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter-x"></i>
+        </div>
+    </footer>
+</body>
+</html>

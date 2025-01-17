@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique - Coffee Selection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo1.jpg" alt="">
+        </div>
+        <div class="links">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="CoffeeSelection.html">Coffee Selection</a>
+                <a href="BrewingEquips.html">Brewing Equipment</a>
+                <a href="EventsWorkshops.html">Events</a>
+                <a href="SpecialOffers.html">Special Offers</a>
+                <a href="Cart.html"><i class="bi bi-basket"></i></a>
+                <a href="#"><i class="bi bi-person-square"></i></a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="equipment-search" class="text-center my-4">
+            <h1>Find Your Brewing Equipment</h1>
+            <input type="text" id="searchEquipment" class="form-control mx-auto mt-3" style="max-width: 400px;" placeholder="Search brewing equipment...">
+
+        <label for="sort-by">Sort By:</label>
+        <select id="sort-by" class="form-control mx-auto mt-3" style="max-width: 200px;">
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+        </select>
+
+        <label for="filter-by" class="mt-3">Filter By:</label>
+        <select id="filter-by" class="form-control mx-auto mt-3" style="max-width: 200px;">
+            <option value="all">All</option>
+            <option value="grinder">Grinders</option>
+            <option value="maker">Coffee Makers</option>
+            <option value="press">Presses</option>
+            <option value="accessories">Accessories</option>
+        </select>
+        </div>
+            <div class="basket-noti">
+                <button type="button" onclick="location.href='Cart.html'" class="btn btn-primary position-relative">
+                    <i class="bi bi-basket"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    <span id="inputnum">0</span>
+                    <span class="visually-hidden"></span>
+                    </span>
+                </button>
+            </div>
+        <div id="brew-container">
+            <div class="equipment-item" data-category="grinder">
+                <img src="images/handgrinder.jpg" alt="Hand Grinder">
+                <h2>Hand Grinder</h2>
+                <p class="description">A compact and durable hand grinder designed for coffee enthusiasts who value precision and control. Its stainless steel burrs ensure consistent grinding for a perfect brew every time.</p>
+                <p><span>Usage Tip:</span> Adjust the grind size for different brewing methods like French press, pour-over, or espresso.</p>
+                <p class="equip-price"><span>Price:</span> £45</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="grinder">
+                <img src="images/machinegrinder.jpg" alt="Machine Grinder">
+                <h2>Machine Grinder</h2>
+                <p class="description">An electric grinder with precision settings to handle coarse to fine grinds effortlessly. Its powerful motor is perfect for those who want speed without compromising quality.</p>
+                <p><span>Usage Tip:</span> Use a medium grind for drip coffee and a fine grind for espresso to bring out the best flavors.</p>
+                <p class="equip-price"><span>Price:</span> £199.99</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="accessories">
+                <img src="images/scale.jpg" alt="Coffee Scale">
+                <h2>Coffee Scale</h2>
+                <p class="description">A precision coffee scale with a built-in timer and easy to use, perfect for measuring coffee grounds and water accurately to ensure consistency in every cup.</p>
+                <p><span>Usage Tip:</span> Always measure coffee and water by weight (not volume) for the most precise brewing ratios.</p>
+                <p class="equip-price"><span>Price:</span> £139.99</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="press">
+                <img src="images/french-press.jpg" alt="French Press">
+                <h2>French Press</h2>
+                <p class="description">A classic brewing tool that allows you to brew a full-bodied and rich cup of coffee. Its glass body and stainless steel plunger make it durable.</p>
+                <p><span>Usage Tip:</span> Use coarse-ground coffee and steep for 4 minutes to get the best flavor.</p>
+                <p class="equip-price"><span>Price:</span> £10</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="accessories">
+                <img src="images/3-piece-filter-set.jpg" alt="Coffee Filter Set">
+                <h2>Coffee Filter Set</h2>
+                <p class="description">A versatile set of coffee filters suitable for pour-over brewing methods. Includes reusable metal, paper, and cloth filters for different preferences.</p>
+                <p><span>Usage Tip:</span> Use the metal filter for robust flavors and the paper filter for a cleaner taste.</p>
+                <p class="equip-price"><span>Price:</span> £11.99</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="accessories">
+                <img src="images/coffee-tin.jpg" alt="Coffee Tin">
+                <h2>Coffee Tin</h2>
+                <p class="description">An airtight coffee tin designed to preserve the freshness of your coffee beans by protecting them from air, light, and moisture.</p>
+                <p><span>Usage Tip:</span> Store coffee beans in a cool, dry place and avoid refrigeration for the best freshness.</p>
+                <p class="equip-price"><span>Price:</span> £7.99</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="accessories">
+                <img src="images/kettle.jpg" alt="Kettle">
+                <h2>Kettle</h2>
+                <p class="description">A gooseneck kettle with precise temperature control, perfect for pour-over brewing. Its ergonomic design ensures a steady and controlled pour.</p>
+                <p><span>Usage Tip:</span> Heat water to 90-95°C for the best extraction and use the gooseneck for consistent pouring.</p>
+                <p class="equip-price"><span>Price:</span> £17</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="accessories">
+                <img src="images/coffee-dripper.jpg" alt="Coffee Dripper">
+                <h2>Coffee Dripper</h2>
+                <p class="description">A ceramic coffee dripper that enhances pour-over brewing, providing even extraction and exceptional flavor clarity.</p>
+                <p><span>Usage Tip:</span> Pre-wet the filter before brewing to remove any paper taste and ensure even saturation of coffee grounds.</p>
+                <p class="equip-price"><span>Price:</span> £28</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="accessories">
+                <img src="images/coffee-filter.jpg" alt="Coffee Filter">
+                <h2>Coffee Filter</h2>
+                <p class="description">High-quality disposable coffee filters compatible with most pour-over drippers. They provide a clean and sediment-free cup.</p>
+                <p><span>Usage Tip:</span> Always pre-rinse the filter to prevent paper flavor from affecting your coffee.</p>
+                <p class="equip-price"><span>Price:</span> £4.99</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="maker">
+                <img src="images/coffee-maker.jpg" alt="Coffee Maker">
+                <h2>Philips Daily Coffee Maker</h2>
+                <p class="description">An easy-to-use drip coffee maker designed for convenience and reliability. Perfect for brewing multiple cups of coffee at home or in the office.</p>
+                <p><span>Usage Tip:</span> Use medium-coarse ground coffee and a paper filter for optimal taste.</p>
+                <p class="equip-price"><span>Price:</span> £215</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="maker">
+                <img src="images/machine2.jpg" alt="Semi-Automatic Coffee Machine">
+                <h2>Philips Semi-auto Machine</h2>
+                <p class="description">A semi-automatic coffee machine that allows you to craft espresso, cappuccino, and lattes with ease. Ideal for coffee enthusiasts who enjoy customization.</p>
+                <p><span>Usage Tip:</span> Experiment with grind size and milk frothing techniques to achieve your desired flavors.</p>
+                <p class="equip-price"><span>Price:</span> £499.99</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>
+            <div class="equipment-item" data-category="maker">
+                <img src="images/machine3.jpg" alt="Fully Automatic Coffee Machine">
+                <h2>Philips Fully-auto Machine</h2>
+                <p class="description">A state-of-the-art fully automatic coffee machine offering one-touch brewing for espresso, cappuccino, and more. Features a built-in grinder for maximum freshness.</p>
+                <p><span>Usage Tip:</span> Regularly clean the grinder and milk frother to maintain machine performance and coffee quality.</p>
+                <p class="equip-price"><span>Price:</span> £1050</p>
+                <button onclick="addtobasket(this)"><i class="bi bi-basket"></i></button>
+            </div>            
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bean Boutique. All rights reserved.</p>
+        <h4>Contact Us</h4>
+        <p>Email: shop@beanboutique.co.uk</p>
+        <p><i class="bi bi-telephone"></i> +44 75 7550 2992</p>
+        <div class="icons">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter-x"></i>
+        </div>
+    </footer>
+</body>
+</html>

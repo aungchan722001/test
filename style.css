@@ -1,0 +1,836 @@
+*{
+    margin: 0;
+}
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: black;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+header{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: lightseagreen; 
+    max-height: 100vh; 
+}
+.logo img{
+    width: 110px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 1.5rem;
+}
+.links nav a{
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+}
+.links a{
+    color: white; 
+    font-size: 1.2rem; 
+    padding: 0.3rem 0.5rem;
+    box-sizing: border-box;
+    transition: color 0.3s ease-in;
+}
+nav a:nth-child(6){
+    font-size: 1.5rem;
+}
+nav a:last-child{
+    margin-right: 2rem;
+    font-size: 1.5rem;
+}
+.links a:hover{
+    color: black;
+    background-color: #E4C59E;
+    border-radius: 10px;
+}
+main{
+    padding: 2rem;
+}
+#welcome p{
+    color: black;
+}
+#carouselExampleDark{
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+.carousel-inner img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+#carouselExampleDark h5,
+#carouselExampleDark p{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    border: solid white;
+}
+
+#gallery{
+    text-align: center;
+    margin: 1.5rem;
+}
+#gallery img{
+    max-width: 260px;
+    height: auto;
+    margin: 0 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+#gallery img:hover{
+    transform: scale(1.1);
+}
+#promo{
+    text-align: center;
+    background-color: #ffcc66;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+#promo button{
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #20edce, lightseagreen);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer
+}
+#promo button:hover{
+    background: linear-gradient(135deg, lightseagreen, #20edce);
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 55%;
+    height: 60%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content{
+    background-color: #BCA37F;
+    margin: 20% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+}
+.modal-content h3{
+    margin-bottom: 1.5rem;
+}
+.modal-content label{
+    font-size: 1.2rem;
+}
+.modal-content .close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 2rem;
+    cursor: pointer;
+}
+footer{
+    text-align: center;
+    padding: 1.5rem;
+    background-color: lightseagreen;
+    color: white;
+}
+footer h4{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #f4f4f4;
+}
+footer p{
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+footer .icons {
+    margin-top: 1rem;
+}
+footer .icons i {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+footer .icons i:hover{
+    transform: scale(1.2);
+    color: #E4C59E;
+}
+/*Responsive design*/
+@media (max-width: 1024px){
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
+    header .logo img{
+        width: 90px;
+        margin: 1rem 0;
+    }
+    header nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header nav a{
+        margin: 10px;
+        font-size: 1rem;
+    }
+    #carouselExampleDark{
+        max-height: 50%;
+    }
+    #gallery{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    #gallery img{
+        width: 45%;
+    }
+    #promo{
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
+    header .logo img{
+        width: 80px;
+        margin: 0.5rem 0;
+    }
+    header nav{
+        flex-direction: column;
+        text-align: center;
+    }
+    header nav a{
+        font-size: 0.9rem;
+        margin: 5px;
+    }
+    nav a:last-child{
+        margin: auto;
+    }
+    #carouselExampleDark img{
+        width: 100%;
+        height: auto;
+    }
+    #gallery img{
+        width: 90%;
+        margin: 10px 0;
+    }
+    #promo{
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    #promo button{
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    footer{
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    footer h4{
+        font-size: 1rem;
+    }
+    footer p{
+        font-size: 0.9rem;
+    }
+}
+
+/* Coffee Selection Design */
+#search-container{
+    text-align: center;
+    margin: 2rem 0;
+}
+#searchbar{
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+}
+#coffee-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: auto;
+    max-width: 100%;
+}
+.coffee-item{
+    background: white;
+    padding: 1.2rem 1.2rem;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.coffee-item img{
+    width: 70%;
+    height: auto;
+}
+.coffee-item h2{
+    margin: 0.2rem 0;
+    color: #805031;
+}
+.coffee-item p{
+    color: black;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+}
+.coffee-item span{
+    color: rgb(61, 130, 130);
+}
+.coffee-price span{
+    color: rgb(40, 27, 27);
+    font-size: 1.1rem;
+}
+.coffee-item button{
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    background-color: teal;
+    border-radius: 10px;
+}
+.coffee-item button:hover{
+    background-color: #E4C59E;;
+}
+
+/*Cselect responsive design */
+@media (max-width: 1024px){
+    #coffee-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .coffee-item img{
+        width: 80%;
+        height: auto;
+    }
+    .coffee-item p{
+        font-size: 1rem;
+    }
+    #search-container{
+        margin: 1.5rem 0;
+    }
+    #searchbar{
+        width: 90%;
+    }
+}
+@media (max-width: 768px){
+    #coffee-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+    .coffee-item img{
+        width: 100%;
+        height: auto;
+    }
+    .coffee-item h2{
+        font-size: 1.2rem;
+    }
+    .coffee-item p{
+        font-size: 0.9rem;
+    }
+    #searchbar{
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+/* Brewing Equipments Design */
+#equipment-search{
+    text-align: center;
+    margin: 2rem 0;
+}
+#searchEquipment{
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+}
+#brew-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 90%;
+    margin: auto;
+    padding: 1rem;
+    gap: 1rem;
+}
+#searchBar{
+    width: 80%;
+    max-width: 400px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.equipment-item{
+    background: white;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+.equipment-item img{
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+.equipment-item h2{
+    margin: 0.5rem;
+}
+.equipment-item p{
+    color: black;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+.equipment-item span{
+    color: rgb(61, 130, 130);
+    font-weight: bold;
+}
+.equipment-item .price span{
+    color: rgb(40, 27, 27);
+    font-size: 1.2rem;
+}
+.equipment-item button{
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    background-color: teal;
+    border-radius: 10px;
+}
+.equipment-item button:hover{
+    background-color: #E4C59E;;
+}
+/*Bequip responsive design */
+@media (max-width: 1024px){
+    #brew-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .equipment-item img{
+        width: 80%;
+        height: auto;
+    }
+    .equipment-item h2{
+        font-size: 1.2rem;
+    }
+    .equipment-item p{
+        font-size: 1rem;
+    }
+    #searchEquipment{
+        width: 90%;
+        margin: 1rem auto;
+    }
+}
+@media (max-width: 768px){
+    #brew-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+    .equipment-item img{
+        width: 100%;
+        height: auto;
+    }
+    .equipment-item h2{
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    .equipment-item p{
+        font-size: 0.9rem;
+    }
+    #searchEquipment{
+        width: 95%;
+        margin: 0.5rem auto;
+    }
+}
+
+/*EventsWorkshops design*/
+#events-header{
+    text-align: center;
+}
+#event-lists{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    line-height: 2;
+    margin: 10px ;
+    padding-left: 20px;
+}
+.event-item{
+    margin: 10px 10px;
+    text-align: center;
+}
+.event-item h2, 
+.event-item p{
+    margin: 10px 20px;
+}
+.event-item span{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.event-item img{
+    width: 100vh;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content{
+    background-color: #F8F1E7;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+.modal-content h2{
+    margin-bottom: 15px;
+    color: black;
+}
+.modal-content input, 
+.modal-content button{
+    padding: 10px;
+    margin: 10px auto;
+    width: calc(100% - 20px);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    display: block;
+}
+.modal-content button{
+    background-color: teal;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    margin-top: 20px;
+}
+.modal-content button:hover{
+    background-color: #E4C59E;
+    color: black;
+}
+.modal-content .close{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+}
+.register-btn{
+    padding: 10px 20px;
+    background-color: teal;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.register-btn:hover{
+    background-color: #E4C59E;
+    color: black;
+}
+/*EventsWorkshops responsive design */
+@media (max-width: 1024px){
+    #event-lists {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    .event-item{
+        margin: 10px;
+    }
+    .event-item h2, 
+    .event-item p{
+        margin: 10px 15px;
+    }
+    .modal-content{
+        width: 95%;
+        padding: 15px;
+    }
+    .modal-content button{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px){
+    #event-lists{
+        grid-template-columns: 1fr;
+        padding: 5px;
+    }
+    .event-item{
+        margin: 10px 5px;
+    }
+    .event-item h2{
+        font-size: 1.3rem;
+    }
+    .event-item p{
+        font-size: 0.9rem;
+    }
+    .event-item img{
+        margin-top: 10px;
+        max-width: 100%;
+    }
+    .modal-content{
+        width: 100%;
+        padding: 10px;
+    }
+    .modal-content button{
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .register-btn{
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+/* Special Offers Design */
+#offers-header{
+    text-align: center;
+    margin: 30px 0;
+    color: #333;
+}
+#offers-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.offer-item{
+    background-color: #fff;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.offer-item:hover{
+    transform: scale(1.1);
+}
+.offer-item img{
+    width: 100%;
+    height: auto;
+}
+.offer-item h2{
+    margin: 15px 0 10px;
+    color: #805031;
+}
+.offer-item p{
+    margin: 10px;
+    color: black;
+}
+.offer-item span{
+    font-weight: bold;
+    color: black;
+}
+.register-btn{
+    padding: 10px 15px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+.register-btn:hover{
+    background-color: #E4C59E;
+    color: black;
+}
+/*Specialoffers responsive design */
+@media (max-width: 1024px){
+    #offers-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 768px){
+    #offers-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Basket noti */
+.basket-noti{
+    text-align: end;
+}
+/* Basket Notification Button */
+.basket-noti .btn-primary{
+    background-color: lightseagreen;
+    border-color: black;
+    color: black;
+}
+.basket-noti .btn-primary:hover{
+    background-color: #E4C59E;
+    border-color: black;
+}
+
+/* For Cart design */
+#order-container{
+    margin: 2rem auto;
+    max-width: 80%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+#order-container h2{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+.ordertable{
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 1rem;
+}
+.ordertable th{
+    background-color: lightseagreen;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid black;
+}
+.ordertable td{
+    text-align: center;
+    padding: 0.8rem;
+    border: 1px solid black;
+}
+.ordertable td button{
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.ordertable td button.btn-secondary{
+    background-color: teal;
+    color: white;
+}
+.ordertable td button.btn-secondary:hover{
+    background-color: #174841;
+}
+.ordertable td button.btn-danger{
+    background-color: red;
+}
+.ordertable td button.btn-danger:hover{
+    background-color: rgb(178, 0, 0);
+}
+.ordertable td strong{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Responsive cart */
+@media (max-width: 768px){
+    .ordertable{
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        margin: auto;
+        border: 2px solid black;
+    }
+    .ordertable thead{
+        display: none;
+    }
+    .ordertable tr{
+        display: block;
+        border-radius: 10px;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .ordertable td{
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+    .ordertable td::before{
+        content: attr(data-label);
+        font-weight: bold;
+    }
+    .ordertable td button{
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+    #order-container h2{
+        font-size: 1.5rem;
+    }
+}
+
+/* For EventsWorkshops magnific popup */
+.mfp-content{
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+.mfp-content span{
+    font-weight: bold;
+}
+.mfp-close{
+    font-size: 1.5rem;
+    color: black;
+    top: -10px;
+    right: -10px;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 768px){
+    .mfp-content{
+        max-width: 90%;
+        padding: 15px;
+    }
+}

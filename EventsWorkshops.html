@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique - Events and Workshops</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo1.jpg" alt="Bean Boutique Logo">
+        </div>
+        <div class="links">
+            <nav>
+                <a href="HomePage.html">Home</a>
+                <a href="CoffeeSelection.html">Coffee Selection</a>
+                <a href="BrewingEquips.html">Brewing Equipment</a>
+                <a href="EventsWorkshops.html">Events</a>
+                <a href="SpecialOffers.html">Special Offers</a>
+                <a href="Cart.html"><i class="bi bi-basket"></i></a>
+                <a href="#"><i class="bi bi-person-square"></i></a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="events-header">
+            <h1>Upcoming Events and Workshops</h1>
+            <p>Join us for exclusive coffee experiences designed for coffee enthusiasts.</p>
+        </div>
+        <section id="event-lists">
+            <div class="event-item">
+                <a href="#popup1" class="popup-link">
+                    <img src="images/tasting-event.jpg" alt="Coffee Tasting Event">
+                </a>
+                <h2>Coffee Tasting Section</h2>
+                <p>Discover the art of tasting coffee with our experts. Learn how to identify flavor notes and pairings.</p>
+                <p><span>Date:</span> January 26, 2025 | <span>Time:</span> 3:00 PM - 5:00 PM</p>
+                <button class="register-btn" onclick="registerForEvent('Coffee Tasting Section')">Register Now</button>
+            </div>
+            <div class="event-item">
+                <a href="#popup2" class="popup-link">
+                    <img src="images/brewing-class.jpg" alt="Brewing Class">
+                </a>
+                <h2>Master the Coffee Brew</h2>
+                <p>Hands-on brewing class focused on mastering the French Press and Coffee Dripping for the perfect cup every time.</p>
+                <p><span>Date:</span> February 16, 2025 | <span>Time:</span> 1:00 PM - 3:00 PM</p>
+                <button class="register-btn" onclick="registerForEvent('Master the French Press')">Register Now</button>
+            </div>
+            <div class="event-item">
+                <a href="#popup3" class="popup-link">
+                    <img src="images/roasting-workshop.jpg" alt="Roasting Workshop">
+                </a>
+                <h2>Roasting Workshop</h2>
+                <p>Join our roasting experts for an immersive session on how to roast coffee beans to perfection.</p>
+                <p><span>Date:</span> March 09, 2025 | <span>Time:</span> 10:00 AM - 1:00 PM</p>
+                <button class="register-btn" onclick="registerForEvent('Roasting Workshop')">Register Now</button>
+            </div>
+            <div class="event-item">
+                <a href="#popup4" class="popup-link">
+                    <img src="images/latte-art-workshop.jpg" alt="Latte Art Workshop">
+                </a>
+                <h2>Latte Art Workshop</h2>
+                <p>Learn the art of creating beautiful latte art designs like hearts, rosettas, and tulips with our professional baristas.</p>
+                <p><span>Date:</span> March 15, 2025 | <span>Time:</span> 2:00 AM - 4:00 PM</p>
+                <button class="register-btn" onclick="registerForEvent('Latte Art Workshop')">Register Now</button>
+            </div>
+        </section>
+        <!-- For Magnific popup -->
+        <div id="mfp-content">
+            <div id="popup1" class="mfp-hide">
+                <h2>Coffee Tasting Session</h2>
+                <img src="images/tasting-event.jpg" alt="Coffee Tasting Event" style="width: 100%; border-radius: 10px;">
+                <p>Join our coffee experts for an engaging tasting session and explore the diverse flavors of coffee.</p>
+                <p><span>Date:</span> January 26, 2025</p>
+                <p><span>Time:</span> 3:00 PM - 5:00 PM</p>
+            </div>
+            <div id="popup2" class="mfp-hide">
+                <h2>Master the Coffee Brew</h2>
+                <img src="images/brewing-class.jpg" alt="Brewing Class" style="width: 100%; border-radius: 10px;">
+                <p>Hands-on brewing class focused on mastering the French Press and Coffee Dripping techniques.</p>
+                <p><span>Date:</span> February 16, 2025</p>
+                <p><span>Time:</span> 1:00 PM - 3:00 PM</p>
+            </div>
+            <div id="popup3" class="mfp-hide">
+                <h2>Roasting Workshop</h2>
+                <img src="images/roasting-workshop.jpg" alt="Roasting Workshop" style="width: 100%; border-radius: 10px;">
+                <p>Learn the perfect roasting techniques from our experts in this immersive workshop.</p>
+                <p><span>Date:</span> March 09, 2025</p>
+                <p><span>Time:</span> 10:00 AM - 1:00 PM</p>
+            </div>
+            <div id="popup4" class="mfp-hide">
+                <h2>Latte Art Workshop</h2>
+                <img src="images/latte-art-workshop.jpg" alt="Latte Art Workshop" style="width: 100%; border-radius: 10px;">
+                <p>Create stunning latte art designs with guidance from our professional baristas.</p>
+                <p><span>Date:</span> March 15, 2025</p>
+                <p><span>Time:</span> 2:00 PM - 4:00 PM</p>
+            </div>
+        </div>
+
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeEventModal()">&times;</span>
+                <h2>Register for Event</h2>
+                <form id="eventForm">
+                    <label for="eventName">Event:</label>
+                    <input type="text" id="eventName" name="eventName" placeholder="Event Name">
+
+                    <label for="userName">Name:</label>
+                    <input type="text" id="userName" name="userName" placeholder="Your Name" required>
+
+                    <label for="userEmail">Email:</label>
+                    <input type="email" id="userEmail" name="userEmail" placeholder="Your Email" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bean Boutique. All rights reserved.</p>
+        <h4>Contact Us</h4>
+        <p>Email: shop@beanboutique.co.uk</p>
+        <p><i class="bi bi-telephone"></i> +44 75 7550 2992</p>
+        <div class="icons">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter-x"></i>
+        </div>
+    </footer>
+</body>
+</html>
